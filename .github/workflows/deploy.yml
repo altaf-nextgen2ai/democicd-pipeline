@@ -17,10 +17,10 @@ jobs:
           username: ${{ secrets.EC2_USER }}
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
-            cd /home/ec2-user/democicd-pipeline/democicd-pipeline
+            cd /home/ec2-user/democicd-pipeline
             git pull origin main
-            source venv/bin/activate
-            pip install -r requirements.txt
-            python manage.py migrate --no-input
-            python manage.py collectstatic --no-input
+            source democicd-pipeline/venv/bin/activate
+            pip install -r democicd-pipeline/requirements.txt
+            python democicd-pipeline/manage.py migrate --no-input
+            python democicd-pipeline/manage.py collectstatic --no-input
             sudo systemctl restart gunicorn
