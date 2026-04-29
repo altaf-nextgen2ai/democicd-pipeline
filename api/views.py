@@ -6,7 +6,7 @@ from .serializers import ItemSerializer
 
 class HealthCheckView(APIView):
     def get(self, request):
-        return Response({"status": "ok", "message": "Django API is running!"})
+        return Response({"status": "ok", "message": "altaf bhai tune kr liya thanks!"})
 
 class ItemListView(APIView):
     def get(self, request):
